@@ -37,7 +37,15 @@ describe('Turn', function() {
     expect(turn.card).to.equal(card)
   })
 
+  it('should return a guess', function() {
+    const guess = "banana"
+    const card = new Card();
+    const turn = new Turn(guess, card);
 
+    const returnedGuess = turn.returnGuess();
+
+    expect(returnedGuess).to.equal(guess)
+  })
 
 })
 
