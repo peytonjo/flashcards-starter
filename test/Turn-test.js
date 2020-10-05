@@ -56,6 +56,20 @@ describe('Turn', function() {
 
     expect(returnedCard).to.equal(card)
   })
+// evaluateGuess: method that returns a boolean indicating if the user’s guess 
+// matches the correct answer on the card
+  it('should return true if the guess is correct', function() {
+    //setup
+    const guess = "blue"
+    const card = new Card(2, "Whats the color of the sky?", ["blue", "green", "yellow"], "blue");
+    const turn = new Turn(guess, card);
+
+    // Invoke
+    const isCorrect = turn.evaluateGuess()
+
+    // expectation
+    expect(isCorrect).to.equal(true)
+  })
 
 })
 
