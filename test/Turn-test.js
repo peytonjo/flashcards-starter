@@ -56,21 +56,46 @@ describe('Turn', function() {
 
     expect(returnedCard).to.equal(card)
   })
-// evaluateGuess: method that returns a boolean indicating if the user’s guess 
-// matches the correct answer on the card
+
   it('should return true if the guess is correct', function() {
-    //setup
     const guess = "blue"
     const card = new Card(2, "Whats the color of the sky?", ["blue", "green", "yellow"], "blue");
     const turn = new Turn(guess, card);
 
-    // Invoke
     const isCorrect = turn.evaluateGuess()
 
-    // expectation
     expect(isCorrect).to.equal(true)
   })
 
+  it('should return false if the guess is incorrect', function() {
+    const guess = "red"
+    const card = new Card(2, "Whats the color of the sky?", ["blue", "green", "yellow"], "blue");
+    const turn = new Turn(guess, card);
+
+    const isCorrect = turn.evaluateGuess()
+
+    expect(isCorrect).to.equal(false)
+  })
+
+  it('should give feedback based on correct guess', function() {
+    const guess = "blue"
+    const card = new Card(2, "Whats the color of the sky?", ["blue", "green", "yellow"], "blue");
+    const turn = new Turn(guess, card);
+
+    const feedback = turn.giveFeedback()
+
+    expect(feedback).to.equal('correct!')
+  })
+
+  it('should give feedback based on incorrect guess', function() {
+    const guess = "red"
+    const card = new Card(2, "Whats the color of the sky?", ["blue", "green", "yellow"], "blue");
+    const turn = new Turn(guess, card);
+
+    const feedback = turn.giveFeedback()
+
+    expect(feedback).to.equal('incorrect!')
+  })
 })
 
 
