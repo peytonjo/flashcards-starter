@@ -107,4 +107,23 @@ describe('Round', function () {
 
     expect(feedback).to.equal('correct!')
   })
+
+  it('should increment through the cards each turn', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
+    const cards = [card1, card2, card3]
+    const deck = new Deck(cards)
+    const round = new Round(deck);
+
+    expect(round.returnCurrentCard()).to.equal(card1)
+
+    round.takeTurn('pug')
+
+    expect(round.returnCurrentCard()).to.equal(card2)
+
+    round.takeTurn('spleen')
+
+    expect(round.returnCurrentCard()).to.equal(card3)
+  })
 })

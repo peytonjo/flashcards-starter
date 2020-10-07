@@ -8,21 +8,19 @@ class Round {
   }
 
   returnCurrentCard() {
-    return this.deck.cards[0]
+    return this.deck.cards[this.turns]
   }
 
   takeTurn(guess) {
-    this.turns = this.turns + 1
-  
     const currentCard = this.returnCurrentCard()
     const turn = new Turn(guess, currentCard)
 
     if(!turn.evaluateGuess()) {
       this.incorrectGuesses.push(currentCard.id)
     }
-   
+    this.turns = this.turns + 1
     const feedback = turn.giveFeedback()
-    
+
     return feedback
   }
 }
