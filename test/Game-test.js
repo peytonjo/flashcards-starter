@@ -28,14 +28,14 @@ describe('Game', function() {
   })
 
   it('should create cards from data', function() {
-    const cards = game.createCards(data)
+    const cards = game.createCards(data.prototypeData)
 
     expect(cards).to.be.an('array')
     expect(cards[0]).to.be.an.instanceOf(Card)
   })
 
   it('should create a deck', function() {
-    const cards = game.createCards(data)
+    const cards = game.createCards(data.prototypeData)
     const deck = game.createDeck(cards)
 
     expect(deck).to.be.an.instanceOf(Deck)
@@ -43,11 +43,20 @@ describe('Game', function() {
   })
 
   it('should create a round', function() {
-    const cards = game.createCards(data)
+    const cards = game.createCards(data.prototypeData)
     const deck = game.createDeck(cards)
     const round = game.createRound(deck)
 
     expect(round).to.be.an.instanceOf(Round)
+  })
+
+  it('should start the game', function() {
+    // assign the round to currentRound
+    expect(game.currentRound).to.not.be.an.instanceOf(Round)
+
+    game.start()
+
+    expect(game.currentRound).to.be.an.instanceOf(Round)
   })
 
   // it('should keep track of the currentRound', function() {
