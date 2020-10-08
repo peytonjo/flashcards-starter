@@ -34,6 +34,16 @@ class Game {
     return cards;
   }
 
+  createDeck(cards) {
+    const deck = new Deck(cards)
+
+    return deck;
+  }
+
+  // createRound(deck) {
+  //   return new Round(deck)
+  // }
+
   printMessage(message){
     return message 
   }

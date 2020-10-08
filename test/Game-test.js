@@ -34,6 +34,15 @@ describe('Game', function() {
     expect(cards[0]).to.be.an.instanceOf(Card)
   })
 
+  it('should create a deck', function() {
+    const cards = game.createCards(data)
+
+    const deck = game.createDeck(cards)
+
+    expect(deck).to.be.an.instanceOf(Deck)
+    expect(deck.cards[0]).to.be.an.instanceOf(Card)
+  })
+
   // it('should keep track of the currentRound', function() {
   //   expect(game.currentRound).to.equal()
   // })
