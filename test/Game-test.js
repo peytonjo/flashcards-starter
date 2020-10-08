@@ -12,26 +12,12 @@ const Card = require("../src/Card");
 const Deck = require("../src/Deck");
 const Game = require("../src/Game");
 const Round = require("../src/Round");
-
+const data = require("../src/data")
 describe('Game', function() {
-  let card1;
-  let card2;
-  let card3;
-  let card4;
-  let cards;
-  let deck;
-  let round;
   let game;
 
   beforeEach(function() {
-    card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-    card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
-    card4 = new Card(18, 'Question', ['Wrong', 'Right'], 'Right');
-    cards = [card1, card2, card3, card4]
-    deck = new Deck(cards)
-    round = new Round(deck);
-    game = new Game(round);
+    game = new Game();
   })
   it('should be a class', function() {
     expect(Game).to.be.a('function')
@@ -41,7 +27,16 @@ describe('Game', function() {
     expect(game).to.be.an.instanceOf(Game)
   })
 
-  it('should keep track of the currentRound', function() {
-    expect(game.currentRound).to.equal(round)
+  it('should create cards from data', function() {
+    const cards = game.createCards(data)
+
+    expect(cards).to.be.an('array')
+    expect(cards[0]).to.be.an.instanceOf(Card)
   })
+
+  // it('should keep track of the currentRound', function() {
+  //   expect(game.currentRound).to.equal()
+  // })
+
+
 })
