@@ -40,9 +40,11 @@ class Game {
     return deck;
   }
 
-  // createRound(deck) {
-  //   return new Round(deck)
-  // }
+  createRound(deck) {
+    const round = new Round(deck)
+
+    return round;
+  }
 
   printMessage(message){
     return message 
