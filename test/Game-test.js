@@ -1,18 +1,10 @@
-// Your Game class should meet these other requirements:
-  // Should keep track of the currentRound
-  // start: method that starts everything
-  // Creates Cards
-  // Puts Cards in a Deck
-  // Creates a new Round using the Deck
-  // invokes printMessage to display the message in the CLI
-  // invokes printQuestion to kick off our helper functions that allow interaction via the CLI
-
 const { expect } = require("chai");
 const Card = require("../src/Card");
 const Deck = require("../src/Deck");
 const Game = require("../src/Game");
 const Round = require("../src/Round");
 const data = require("../src/data")
+
 describe('Game', function() {
   let game;
 
@@ -51,17 +43,10 @@ describe('Game', function() {
   })
 
   it('should start the game', function() {
-    // assign the round to currentRound
     expect(game.currentRound).to.not.be.an.instanceOf(Round)
 
     game.start()
 
     expect(game.currentRound).to.be.an.instanceOf(Round)
   })
-
-  // it('should keep track of the currentRound', function() {
-  //   expect(game.currentRound).to.equal()
-  // })
-
-
 })
