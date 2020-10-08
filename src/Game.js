@@ -25,7 +25,7 @@ class Game {
         cardData.id, 
         cardData.question, 
         cardData.answers, 
-        cardData.correctAnswers
+        cardData.correctAnswer
       )
 
       return card;
@@ -50,7 +50,7 @@ class Game {
     const cards = this.createCards(prototypeQuestions)
     const deck = this.createDeck(cards)
     const round = this.createRound(deck)
-
+    
     this.currentRound = round
 
     this.printMessage(deck, round)

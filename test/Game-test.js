@@ -24,6 +24,10 @@ describe('Game', function() {
 
     expect(cards).to.be.an('array')
     expect(cards[0]).to.be.an.instanceOf(Card)
+    expect(cards[0].id).to.equal(data.prototypeData[0].id)
+    expect(cards[0].question).to.equal(data.prototypeData[0].question)
+    expect(cards[0].answers).to.equal(data.prototypeData[0].answers)
+    expect(cards[0].correctAnswer).to.equal(data.prototypeData[0].correctAnswer)
   })
 
   it('should create a deck', function() {
