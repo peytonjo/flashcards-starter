@@ -1,3 +1,13 @@
+# FlashCards - Solo project
+Mod 1
+
+Flash cards is a console based program that takes in data in the form of flash cards. User interacts with the program by answer the question on the flash cards when presented. 
+
+### [Project Asana Board](https://app.asana.com/0/1198164800507529/board)
+
+### Contributors
+* Peyton Jones [Github Profile](https://github.com/Peytonjo)
+
 ### Set Up
 * Fork the repo and clone down.
 * In the terminal, run command "node index.js" to interact with the app.
@@ -22,9 +32,7 @@ Objectives
 
 ### Iteration 4 - logging past activity
 ObjectiveS
-1. Organize Asana project board
-
-(https://app.asana.com/0/1198164800507529/board)
+1. Organize Asana project board [link](https://app.asana.com/0/1198164800507529/board)
 
 
 
